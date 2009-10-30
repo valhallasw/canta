@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META name="copyright" content="2008 Chaumet Software">
+<TITLE>Aide de Canta - Player MIDI</TITLE>
+</HEAD>
+<BODY>
+<h1>Player MIDI</h1>
+<p>Le player MIDI est situé en base de l'écran de Canta (voir ci-dessous). Il sert à charger et jouer la musique contenant la mélodie et l'accompagnement des chansons que vous souhaitez interpréter.</p>
+<IMG SRC="player_position.png">
+<h2>Description</h2>
+<p>Le player est constitué de 4 boutons bleus sur la gauche, une zone d'affichage sur fond noir, deux ensembles de boutons et d'affichage pour la transposition et le décalage visuel de la mélodie, et une zone d'affichage des paroles de la chanson.</p>
+<IMG SRC="player.png">
+<h3>Les différentes parties</h3>
+<table>
+<tr><td>
+<IMG SRC="load.png">
+</td><td>
+<p><b>Load</b> - Chargement des fichiers MIDI (voir ci-dessous).</p>
+</td></tr>
+<tr><td>
+<IMG SRC="play.png">
+</td><td>
+<p><b>Play</b> - Démarrage de la lecture. Ce bouton n'est activé que lorsqu'un fichier MIDI a été chargé.</p>
+</td></tr>
+<tr><td>
+<IMG SRC="pause.png">
+</td><td>
+<p><b>Pause</b> - Mise en pause de la lecture du fichier MIDI. Pour sortir de la pause, cliquez à nouveau sur ce bouton, la lecture repart là où elle a été arrêtée.</p>
+</td></tr>
+<tr><td>
+<IMG SRC="stop.png">
+</td><td>
+<p><b>Stop</b> - Arrêt de la lecture et remise zéro du compteur. Une nouvelle lecture peut être lancée avec le bouton "play", elle redémarrera au début de la chanson.</p>
+</td></tr>
+<tr><td>
+<IMG SRC="but_loop.png">
+</td><td>
+<p><b>Boucle</b> - Quand ce bouton est enfoncé, le player jouera en boucle les mesures sélectionnées (voir ci-dessous). Lorsqu'il arrivera à la fin de la dernière mesure, il recommencera automatiquement à la première. Si ce bouton n'est pas enfoncé, le player jouera depuis la mesure sélectionnée dans "début" et s'arrêtera après avoir joué la mesure sélectionnée dans "fin".</p>
+</td></tr>
+<tr><td>
+<IMG SRC="debut_fin_loop.png">
+</td><td>
+<p><b>Début et fin de lecture</b> - La première valeur indique le numéro de la première mesure jouée, le deuxième indique le numéro de la dernière mesure jouée. Pour changer ces valeurs, voir ci-dessous "Lecture en boucle entre deux mesures".</p>
+</td></tr>
+<tr><td>
+<IMG SRC="compteur.png">
+</td><td>
+<p>Cette zone sert à l'affichage de l'état du player, et au compteur indiquant la progression dans la lecture du fichier. Le player peut prendre les états "Stop", "Play" ou "Pause".</p>
+</td></tr>
+<tr><td>
+<IMG SRC="transpo.png">
+</td><td>
+<p><b>T = Transposition</b> - Ce réglage sert à produire une transposition de la mélodie et de l'accompagnement. La valeur indiquée donne le nombre de demi-tons de transposition par rapport au fichier. Cette transposition est limitée à l'intervalle [-11,11] demi-tons, c'est à dire juste un demi-ton de moins qu'une octave. Ceci pour vous permettre d'adapter la mélodie à votre registre vocal plus aisément.<br>
+<b>D = Décalage de l'affichage</b> - Ce réglage sert à faire un décalage de l'affichage par octaves entières. La mélodie n'est pas modifiée, les barres correspondant aux notes sont juste décalées à l'écran pour vous permettre de mieux comparer avec votre performance vocale.
+<br>NB: Ces deux réglages fonctionnent, comme ceux des début et fin de lecture, par clic ou par étirement (voir ci-dessous "Lecture en boucle entre deux mesures").</p>
+</td></tr>
+
+<tr><td>
+<IMG SRC="volume.png">
+</td><td>
+<p><b>Volumes</b> - Ces deux curseurs servent à régler séparément les volumes sonores de la mélodie (M) et de l'accompagnement (A). C'est très utile quand l'accompagnement est trop fort et cache la mélodie.</p>
+</td></tr>
+
+<tr><td>
+<IMG SRC="paroles.png">
+</td><td>
+<p><b>Paroles</b> - Dans cette zone sont affichées les paroles, si elles existent, du fichier MIDI. Le texte du haut de la zone est le prochain à être chanté. Le texte est décalé vers le haut au fur et à mesure que les paroles sont passées.</p>
+</td></tr>
+</table>
+
+<p><b>Barre des mesures</b></p>
+<IMG SRC="barre_mesures.png">
+<p>La barre qui est juste sous les notes et qui défile en même temps qu'elles, représente les mesures musicales du morceau joué par le player. Chaque mesure est représentée par un rectangle vert avec un numéro. Lorsque vous cliquez dans une mesure, le player est reprogrammé pour jouer le morceau à partir du début de la mesure correspondante. Ceci permet de reprendre un passage que l'on veut refaire sans avoir besoin de recommencer le morceau au début.</p>
+<p>Dés que vous cliquez dans une mesure, le player est lancé. S'il était en pause, il sort de la pause; s'il était arrêté, il redémarre, et s'il était en train de jouer, les notes en cours sont arrêtées et le morceau repart immédiatement au début de la mesure sélectionnée.</p>
+<p>Cliquer dans la barre des mesures, mais en dehors du rectangle d'une mesure, n'a aucun effet.</p>
+<br>
+
+<p><b>Lecture en boucle entre deux mesures</b></p>
+<p>Lorsque vous cliquez sur le bouton <IMG SRC="but_loop.png" WIDTH="32" HEIGHT="19">, celui-ci change d'apparence et devient <IMG SRC="but_loop_on.png" WIDTH="32" HEIGHT="19">. Le player lira alors en boucle les mesures comprises entre les deux indicateurs situés à côté du bouton.</p>
+<p>Pour choisir la première et la dernière mesure à lire, vous disposez de trois méthodes :
+<ol>
+<li><b>Clic</b>: Cliquer sur la partie haute d'un indicateur augmentera sa valeur de 1, cliquer sur la partie basse la diminuera de 1.
+<li><b>Etirement</b>: Si vous appuyez sur le bouton gauche de la souris sur un indicateur et que vous déplacez la souris vers le haut avant de relâcher le bouton, la valeur de l'indicateur sera augmentée de façon proportionnelle au déplacement. Si au lieu de monter au dessus de l'indicateur, vous descendez en dessous, sa valeur sera diminuée de la même manière.<br>
+<IMG SRC="tirer.png" WIDTH="340" HEIGHT="167">
+<li><b>Drag and drop</b>: Vous pouvez faire un "glissé-déposé" depuis la barre des mesures sur un indicateur. Cette façon de faire et très pratique pour sélectionner les mesures pendant que vous êtes en train d'écouter le morceau, ou bien en cours de travail.<br>
+<IMG SRC="drag_drop.png" >
+</ol>
+<p>Notez bien que le début ne peut pas être plus grand que la fin ! Donc, si vous changer la valeur de la mesure de fin et qu'ensuite vous voulez augmenter la valeur de la mesure de début au-delà de celle de la fin, il vous faudra changer d'abord la mesure de fin avent de pouvoir changer le début.
+</p><br>
+<a name="charger" />
+<h2>Chargement des fichiers MIDI</h2>
+<p>Lorque vous cliquez sur le bouton "load", une fenêtre s'ouvre pour que vous puissiez choisir un fichier MIDI à jouer.</p>
+<IMG SRC="ouvrir_midi.png">
+<p>Ce fichier  doit contenir une piste mélodie correspondant à ce que vous devez chanter.  Cette piste doit être monophonique, c'est-à-dire qu'une seule note ne peut être jouée en même temps. Si aucune piste monophonique n'est trouvée, le fichier est rejeté et un message d'erreur s'affiche sur votre écran.</p>
+<img src="erreur_midi.png">
+<p>Si une seule piste monophonique est trouvée, elle est choisie par le logiciel pour la mélodie. Si plusieurs pistes monophoniques sont trouvées, une autre fenêtre s'affiche.</p>
+<p>Cette fenêtre est destinée à vous laisser choisir quelle piste est celle de la mélodie. Pour vous aider, pour chaque piste, trois informations sont affichées sur la même ligne: le nom de la piste, telle que trouvée dans le fichier,le nom de l'instrument MIDI, tel que défini par la norme "General MIDI", associé à cette piste, et un pourcentage de similitude avec la piste des paroles s'il y en a une. Parfois, comme dans l'exemple ci-dessous, le nom de la piste suffit à identifier la mélodie.</p>
+</p>Lorsque vous avez choisi la piste de la mélodie, cliquez sur le bouton "Sélectionner" situé au bout de la ligne correspondante.</p>
+<IMG SRC="piste_melodie.png">
+
+<p>Parfois, comme dans l'exemple suivant, plusieurs pistes semblent possibles. Dans ce cas, vous pouvez vous aider du pourcentage situé dans la troisième colonne. Il indique le degré de ressemblance entre cette piste et la piste des paroles. Plus ce pourcentage est proche de 100% plus il y a des chances que ce soit la piste contenant la mélodie. Le pourcentage atteint rarement 100% pour diverses raisons, comme l'ajout de commentaires dans les paroles ou bien plusieurs paroles qui sont chantées sur la même note. Un pourcentage de plus de 90% est une bonne indication qu'il s'agit de la piste mélodie. Dans l'exemple ci-dessous, la piste 3 semble la plus prometteuse, c'est celle qu'il faudra essayer en premier. Si elle ne convient pas, on pourra essayer la piste 1. Les autres pistes ne semblent pas convenir.</p>
+<IMG SRC="piste_melodie_2.png">
+<p>Dans certains fichiers MIDI, la mélodie est mélangée avec l'accompagnement, dans ce cas il est impossible de l'utiliser dans Canta.</p>
+<p>NB: Au démarrage de Canta, les boutons "Play", "Pause" et "Stop" sont grisés et ne sont pas utilisables. Ils le deviennent dès qu'un fichier MIDI a été chargé.</p>
+
+<hr>
+<p><A HREF="index.htm">Retour à l'index</A> - <A HREF="interface.htm">Retour à l'Interface</A></p>
+
+
+</BODY>
+</HTML>

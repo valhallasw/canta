@@ -1,0 +1,23 @@
+with "D:\Developpement\gnat\include\win32ada.gpr";
+
+project Tools is
+
+   for Object_Dir use "..\..\obj";
+
+   for Main use ("add_bitmap.adb");
+
+   package Builder is
+      for Default_Switches ("ada") use ("-s");
+      for Executable ("add_bitmap.adb") use "..\exe\add_bitmap.exe";
+   end Builder;
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-gnatf", "-g");
+   end Compiler;
+
+   package Linker is
+      for Default_Switches ("ada") use ("-g");
+   end Linker;
+
+end Tools;
+

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META name="copyright" content="2008 Chaumet Software">
+<TITLE>Canta help - Main Display</TITLE>
+</HEAD>
+<BODY>
+
+<h1>Main display</h1>
+<p>The central area of Canta is dedicated to the display of notes, the ones you sing and the melody played by the MIDI player.</p>
+<IMG SRC="score_position.png">
+
+<h2>The notes you sing</h2>
+<p>The notes that you sing is displayed in real time in the central part of the window of Canta, in the form of a red line.</p>
+<p>In order for Canta to compute the frequency of what you sing, the sound level must be sufficient, which is shown by the microphone indicator when it turns green, and the sound produced must be sufficiently harmonic, which is the case for vowels but not for consonants. Thus, even if you feel that you are singing continuously, the red line may be discontinuous.</p>
+<p>Each horizontal grey line is a semitone. The darker horizontal lines are the C notes.</p>
+<IMG SRC="notes_chant.png">
+<p>It can be seen in the example above, that the notes sung may show wide variation in pitch at the beginning as at the end of the note. What gives the sensation of pitch is the almost horizontal part, which could be decorated with a vibrato. Here, the first note seemed to oscillate between a E and a F, the next two are clearly D, and they are followed by a E, a G and a F.</p>
+
+<h2>The MIDI player's melody</h2>
+<p>When a MIDI file is played, the notes are initially displayed some time in advance (about 2 seconds) in the form of gray rectangle, and then when the time comes to play, they become green.</p>
+<IMG SRC="notes_midi.png">
+
+<h2>Zoom and position</h2>
+<p>It is possible to zoom vertically in the display area thanks to two buttons + and - located at the top of the right edge, and horizontally, with two buttons + and - located at the bottom of the left side of the zone.</p>
+<p>Example:</p>
+<IMG SRC="aff_zoom_ref.png">
+<p>Effect of the vertical zoom :</p>
+<IMG SRC="aff_zoom_vert.png">
+<p>... and with the horizontal zoom :</p>
+<IMG SRC="aff_zoom_horiz.png">
+<p>When a MIDI file is loaded, Canta compute the optimal zoom level and the scroll position in order to display all the notes of the melody with the largest height. It is optimal in the sense that you get the largest rectangle while the highest and the lowest notes are still visible. If you use the zoom, the transposition or the display offset buttons, you can retreive the optimal settings by clicking on the <img src="centrage.png"> button which is on the left side of the bars. It has for effect to center the melody on the screen.
+</p><br>
+
+<h2>The bars</h2>
+<IMG SRC="barre_mesures.png">
+<p>The display, which is just below the notes and scrolls at the same time, represents the the musical bars of the played song. Each bar is represented by a green rectangle with a number. When you click on a green rectangle, the player is reprogrammed to play the song from the beginning of the corresponding bar. This allows you to resume a passage that you want to work on without the need to restart the song at the beginning.</p>
+<p>As soon as you click on a bar, the player is launched. If he was paused, he leaves the pause, if it was stopped, it  restarts, and if it was playing, the notes are stopped and the song goes immediately to the start of the selected bar.</p>
+<p>To click on the bar display but outside of a green rectangle has no effect.</p>
+<br>
+<h2>Normal mode</h2>
+<img src="score_norm.png">
+<p>In normal mode, the display area of the notes is separated into two parts by a vertical line. It corresponds to the present moment. The display area permanently scrolls to the left, which corresponds to the notes sung or played. On the right side, the future notes that the player will soon be played are displayed in grey . This enables you to prepare and eventually readjust in the melody.</p>
+<p>The horizontal zoom can be modified with two buttons + and - located at the bottom left of the display area (horizontal zoom).</p>
+
+<h2>Freeze mode</h2>
+<p>To enter the freeze mode click on "Freeze" button at the bottom left of the window. To escape, click again on the "Freeze" button.</p>
+<img src="score_gel.png">
+<p>In the freeze mode, that is when you click once on the "Freeze" button, the MIDI player is stopped if he was running, there no more vertical line, the coming notes are no more displayed, and only the notes which were played are shown. The capture and analysis of the voice is stopped.</p>
+<p>The freeze mode enables you to travel back in the past to review your performance. In this mode, the horizontal scroll bar becomes active, it allows you to shift the display over time. The zoom buttons are still active and make it easier to see the details.</p>
+<p>Once Canta returns to normal mode, the horizontal scroll bar becomes inactive, and the display will be reset to display the present symbolized by the vertical line. The vertical scroll bar and zoom buttons are still active regardless of the mode.</p>
+<p>If you click on a bar in the freeze mode, Canta exits immediately from the freeze mode and starts playing the song at the beginning of the selected bar. If you click in the bar display but outside a green rectangle, ie in a white area, it has no effect.</p>
+<p><A HREF="index.htm">Back to Index page</A> - <A HREF="interface.htm">Back to Interface page</A></p>
+
+</BODY>
+</HTML>

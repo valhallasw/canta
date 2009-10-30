@@ -1,0 +1,61 @@
+-- le fond de la main window
+BACKGROUND background.bmp
+
+-- Police des boutons
+FONT_BUTTON	Times	18	N 0
+
+-- Police des label
+FONT_LABEL	Times	24	B FFFFFF
+
+-- cadre de la main windows
+MAIN_FRAME 
+	main_coin_haut_gauche.bmp main_bord_haut.bmp main_coin_haut_droite.bmp
+	main_bord_droite.bmp main_coin_bas_droite.bmp main_bord_bas.bmp
+	main_coin_bas_gauche.bmp main_bord_gauche.bmp
+
+-- le Fader
+FADER fond_fader_1.bmp fond_fader_2.bmp fond_fader_3.bmp fader_curseur_off.bmp fader_curseur_on.bmp 15 16
+
+-- fond des boutons: 3 bitmap, 1 offset (2 entiers)
+BUTTON_LARGE but_1_off.bmp but_1_on.bmp but_1_clic.bmp but_1_inval.bmp 0 0
+
+-- bouton d'enregistrement
+BUTTON_REC   but_rec_off.bmp  but_1_on.bmp but_1_clic.bmp but_1_inval.bmp 0 0
+
+-- boutons moyens
+BUTTON_MEDIUM but_2_off.bmp but_2_on.bmp but_2_clic.bmp but_2_inval.bmp 0 0
+
+-- fond des petits boutons
+BUTTON_SMALL but_3_off.bmp but_3_on.bmp but_3_clic.bmp but_3_inval.bmp 0 0
+
+-- Player
+PLAYER bitmap_play.bmp bitmap_pause.bmp bitmap_stop.bmp bitmap_open.bmp voyant_rec.bmp loop_off.bmp loop_on.bmp
+
+-- Zoom
+ZOOM plus.bmp moins.bmp
+
+-- Offset vertical
+OFFSET_V tri_haut.bmp tri_bas.bmp
+
+-- Offset horizontal
+OFFSET_H tri_gauche.bmp tri_droite.bmp
+
+-- ascenseur horizontal: 6 bitmap et un offset
+LIFT_H asc_h_droite.bmp asc_h_centre.bmp asc_h_gauche.bmp asc_h_curs_off.bmp asc_h_curs_on.bmp asc_h_curs_inval.bmp 3 3
+
+-- vertical: 6 bitmap et un offset
+LIFT_V asc_v_haut.bmp asc_v_centre.bmp asc_v_bas.bmp asc_v_curs_off.bmp asc_v_curs_on.bmp asc_v_curs_inval.bmp 3 3
+
+-- cadre des display: 8 bitmap
+DISPLAY_FRAME
+	disp_coin_haut_gauche.bmp disp_bord_haut.bmp disp_coin_haut_droite.bmp
+	disp_bord_droite.bmp disp_coin_bas_droite.bmp disp_bord_bas.bmp
+	disp_coin_bas_gauche.bmp disp_bord_gauche.bmp
+
+-- display fins: 8 bitmap
+THIN_FRAME
+	fins_coin_haut_gauche.bmp fins_bord_haut.bmp fins_coin_haut_droite.bmp
+	fins_bord_droite.bmp fins_coin_bas_droite.bmp fins_bord_bas.bmp
+	fins_coin_bas_gauche.bmp fins_bord_gauche.bmp
+
+TARGET cible.bmp

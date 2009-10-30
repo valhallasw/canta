@@ -1,0 +1,9 @@
+with System;
+with Win32;
+with Win32.Wingdi;
+
+with Conversions;
+with Common_types;	use Common_types;
+
+package body Resources_pkg is
+

@@ -1,0 +1,60 @@
+-- le fond de la main window
+BACKGROUND background.bmp
+
+-- Police des boutons
+FONT_BUTTON Times 18 B FFFFFF
+
+-- Police des label
+FONT_LABEL Times 24 B FFFFFF
+
+-- cadre de la main windows
+MAIN_FRAME 
+	main_chg.bmp main_bh.bmp main_chd.bmp
+	main_bd.bmp main_cbd.bmp main_bb.bmp
+	main_cbg.bmp main_bg.bmp
+
+-- le Fader
+FADER fader_fond_1.bmp fader_fond_2.bmp fader_fond_3.bmp fader_curs_off.bmp fader_curs_on.bmp 4 4
+
+-- fond des boutons
+BUTTON_LARGE but_large_off.bmp but_large_on.bmp but_large_clic.bmp but_large_inval.bmp 0 0
+
+-- bouton d'enregistrement
+BUTTON_REC   but_rec_off.bmp  but_rec_on.bmp but_rec_clic.bmp but_rec_inval.bmp 0 0 
+
+-- boutons moyens
+BUTTON_MEDIUM but_med_off.bmp but_med_on.bmp but_med_clic.bmp but_med_inval.bmp 0 0
+
+-- fond des petits boutons
+BUTTON_SMALL pet_but_off.bmp pet_but_on.bmp pet_but_clic.bmp pet_but_inval.bmp 0 0
+
+-- Player
+PLAYER bitmap_play.bmp bitmap_pause.bmp bitmap_stop.bmp bitmap_open.bmp voyant_rec.bmp loop_off.bmp loop_on.bmp
+
+-- Zoom
+ZOOM plus.bmp moins.bmp
+
+-- Offset vertical
+OFFSET_V tri_haut.bmp tri_bas.bmp
+
+-- Offset horizontal
+OFFSET_H tri_gauche.bmp tri_droite.bmp
+
+-- ascenseur horizontal
+LIFT_H asc_h_g.bmp asc_h_c.bmp asc_h_d.bmp asc_h_curs_off.bmp asc_h_curs_on.bmp asc_h_curs_inval.bmp 4 4
+
+-- vertical
+LIFT_V asc_v_h.bmp asc_v_c.bmp asc_v_b.bmp asc_v_curs_off.bmp asc_v_curs_on.bmp asc_v_curs_inval.bmp 4 4
+
+-- cadre des display
+DISPLAY_FRAME 
+	disp_chg.bmp disp_bh.bmp disp_chd.bmp
+	disp_bd.bmp disp_cbd.bmp disp_bb.bmp
+	disp_cbg.bmp disp_bg.bmp
+-- display fins
+THIN_FRAME
+	disp_chg.bmp disp_bh.bmp disp_chd.bmp
+	disp_bd.bmp disp_cbd.bmp disp_bb.bmp
+	disp_cbg.bmp disp_bg.bmp
+
+TARGET cible.bmp

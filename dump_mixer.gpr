@@ -1,0 +1,57 @@
+with "..\..\..\..\develo~1\gnat\lib\gnat\win32ada.gpr";
+
+project Dump_Mixer is
+
+   for Exec_Dir use "..\Exe";
+   for Main use ("dump_mixer.adb");
+   type Build_Type is
+      ("prod", "debug");
+   Build : Build_Type := external ("build", "debug");
+
+   package Compiler is
+
+      case Build is
+
+         when "debug" =>
+            for Default_Switches ("ada") use ("-g", "-gnatf");
+
+         when "prod" =>
+            for Default_Switches ("ada") use ("-O3", "-gnatn", "-funroll-loops", "-gnatp");
+      end case;
+   end Compiler;
+
+   package Builder is
+
+      case Build is
+
+         when "debug" =>
+            for Default_Switches ("ada") use ("-s", "-g");
+            for Executable ("dump_mixer.adb") use "dump_mixer_dbg.exe";
+
+         when "prod" =>
+            for Default_Switches ("ada") use ("-s", "-fno-strict-aliasing");
+      end case;
+   end Builder;
+
+   case Build is
+
+      when "debug" =>
+         for Object_Dir use "..\obj_dbg";
+
+      when "prod" =>
+         for Object_Dir use "..\obj_prod";
+   end case;
+
+   package Linker is
+
+      case Build is
+
+         when "debug" =>
+
+         when "prod" =>
+            for Default_Switches ("ada") use ("-s");
+      end case;
+   end Linker;
+
+end Dump_Mixer;
+

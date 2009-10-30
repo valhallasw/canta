@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META name="copyright" content="2008 Chaumet Software">
+<TITLE>Canta help- MIDI Player</TITLE>
+</HEAD>
+<BODY>
+<h1>The MIDI Player</h1>
+<p>The MIDI player is located in the bottom of the Canta window (see below). It is used to load and play music containing the melody and the accompaniment of songs you want to interpret.</p>
+<IMG SRC="player_position.png">
+<h2>Description</h2>
+<p>The player consists of 4 blue buttons on the left, a display area on a black background, two sets of buttons and display for the transposition and the display offset of the melody, and a display area of the song lyrics.</p>
+<IMG SRC="player.png">
+<h3>The various parts</h3>
+<table>
+<tr><td>
+<IMG SRC="load.png">
+</td><td>
+<p><b>Load</b> - Load a MIDI file (see below).</p>
+</td></tr>
+<tr><td>
+<IMG SRC="play.png">
+</td><td>
+<p><b>Play</b> - Start playing. This button is activated only when a MIDI file is loaded.</p>
+</td></tr>
+<tr><td>
+<IMG SRC="pause.png">
+</td><td>
+<p><b>Pause</b> - Pause the playing of the MIDi file. To exit the pause, click again on this button, the song will restart where it was stopped.</p>
+</td></tr>
+<tr><td>
+<IMG SRC="stop.png">
+</td><td>
+<p><b>Stop</b> - Stop the palying and reste the counter to zero. The song could be played again by clicking on the play button (see above) and it will start at the begining of the song.</p>
+</td></tr>
+<tr><td>
+<IMG SRC="but_loop.png">
+</td><td>
+<p><b>Loop</b> -When this button is pressed, the player will loops between the two selected mesures (see below). After playing the last selected mesure, it will automaticaly restart at the first selected mesure. If this button is not pressed, the player will player from the "from" mesure and play until the "to" mesure is played and then it will stop.</p>
+</td></tr>
+<tr><td>
+<IMG SRC="debut_fin_loop.png">
+</td><td>
+<p><b>Start and end playing</b> - The first value is the mesure number from witch the player will start its reading, the second value is the mesure number of the last mesure to play. To change theses values see below "Looping between two mesures".</p>
+</td></tr>
+<tr><td>
+<IMG SRC="compteur.png">
+</td><td>
+<p>This area is used to display the status of the player, and the time counter showing the progress in the file. The player may take the status "Stop", "Play" and "Pause".</p>
+</td></tr>
+<tr><td>
+<IMG SRC="transpo.png">
+</td><td>
+<p><b>Transposition</b> - The two buttons on the left, with the indicators in both, are used to produce a transposition of the melody and accompaniment. The indicator gives the number of semitones offset compared to the original. This transposition is limited to the interval [-11,+11] semitones, ie just half a ton less than an octave. This is to be able to adapt the melody to your vocal register more easily.</p>
+<b>Display offset</b> - The two buttons on the right are used to make an offset of the display by full octaves. The melody is not affected, the notes are just shifted on the screen so you can compare them with your vocal performance.</p>
+</td></tr>
+<tr><td>
+<IMG SRC="volume.png">
+</td><td>
+<p><b>Sound level</b> - These two faders ajust the sound level of the melody (M) and of the accompaniment (A). It is very usefull when the accompaniment is too loud and masks the melody.</p>
+</td></tr>
+<tr><td>
+<IMG SRC="paroles.png">
+</td><td>
+<p><b>Lyrics</b> - In this area are displayed the lyrics, if they exist in the MIDI file. The text at the top of the area is next to be sung. The text is shifted upwards as the lyrics went.</p>
+</td></tr>
+</table>
+<p><b>The bars</b></p>
+<IMG SRC="barre_mesures.png">
+<p>The display, which is just below the notes and scrolls at the same time, represents the the musical bars of the played song. Each bar is represented by a green rectangle with a number. When you click on a green rectangle, the player is reprogrammed to play the song from the beginning of the corresponding bar. This allows you to resume a passage that you want to work on without the need to restart the song at the beginning.</p>
+<p>As soon as you click on a bar, the player is launched. If he was paused, he leaves the pause, if it was stopped, it  restarts, and if it was playing, the notes are stopped and the song goes immediately to the start of the selected bar.</p>
+<p>To click on the bar display but outside of a green rectangle has no effect.</p>
+<br>
+<p><b>Looping between two mesures</b></p>
+<p>When you click on the loop button <IMG SRC="but_loop.png" WIDTH="32" HEIGHT="19">, it changes to <IMG SRC="but_loop_on.png" WIDTH="32" HEIGHT="19">. From then on, the MIDI player will loop between the two mesures which are displayed on the left of the button.</p>
+<p>To choose the values of the first and last mesure to play you have 3 possibilities :
+<ol>
+<li>Click on the upper part of the displayed value and it will increase by one. Click on the lower part and it will decrease by one.
+<li>Put the mouse cursor on one the "from" or "to" mesure indicator, press the mouse left button and then move the mouse to the upper side of the screen, the value will increase in proportion with the mouse displacement. To decrease the value, move the mouse to the lower part of the screen.<br>
+<IMG SRC="tirer.png" WIDTH="340" HEIGHT="167">
+<li>Do a drag and drop from the mesure bar to one of the mesure indicator. This way of doing is very convenient when you are listening à song or when you are working with it.<br>
+<IMG SRC="drag_drop.png" >
+</ol>
+<p>Notes that the "from" value could not be higher than the "to" value ! So, if you change the "to" value and after that you want to change the "from" value to something higher than the "to" value, you have to change the "to" value first before changing the "from" value.
+</p><br>
+<a name="charger" />
+<h2>Loading MIDI files</h2>
+<p>When you click on the "load" button, a window appears so you can choose a MIDI file to play.</p>
+<IMG SRC="ouvrir_midi.png">
+<p>This file should contain a melody track corresponding to what you want to sing. This track must be monophonic, ie a single note can be played at the same time. If no mono track is found, the file is rejected, and an error message appears on your screen.</p>
+<img src="erreur_midi.png">
+<p>If only one monophonic track is found, it is chosen by the software as the melody. If several monophonic tracks are found, another window appears.</p>
+<p>This window is designed to let you choose which track is the melody. To help you, for each track, two pieces of information are displayed on the same line: the track name, as found in the file, and the MIDI instrument, as defined by the standard "General MIDI" associated with this track.</p>
+<p>When you have chosen the track of the melody, click on the "Select" button at the end of the line.</p>
+<IMG SRC="piste_melodie.png">
+<p>Sometimes, as in the above example, the melody is clearly identified, but sometimes not, and you may need to make several tries to find it. In the example below, several tracks seem possible, you have to try one after the other to see which is best. The percentage values displayed are here to help you in this process. They show the percentage of resemblance between the track and the lyrics. The closer to 100% the best luck to be the melody track. Notes that these values are rarely 100% because of a lot of reasons, like two words are sung on the same note or somes comments are added to the lyrics.</p>
+<IMG SRC="piste_melodie_2.png">
+<p>In some MIDI files, the melody is mixed with the accompaniment, in this case it is impossible to use it in Canta.</p>
+<p>NB: When Canta starts, the buttons "Play", "Break" and "Stop" are dimmed and are not usable. They become as soon as a MIDI file is loaded.</p>
+<p><A HREF="index.htm">Back to Index page</A> - <A HREF="interface.htm">Back to Interface page</A></p>
+
+</BODY>
+</HTML>

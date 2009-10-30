@@ -1,0 +1,29 @@
+
+   -- -------------------------------------------------------------------------------------------------
+
+   Null_header : Win32.Wingdi.BITMAPINFOHEADER := ( 40, 0, 0, 1, 32, 0, 0, 2834, 2834, 0, 0  );
+
+   procedure get_bitmap( nom : string;
+                         header : out Win32.Wingdi.BITMAPINFOHEADER;
+                         bits   : out Win32.LPVOID ) is
+      test : string := Conversions.To_lower(nom); -- en miniscule
+   begin
+      for i in data'range loop
+         if data(i).nom.all = test then
+            header := data(i).bih;
+            bits := data(i).bits;
+            return;
+         end if;
+      end loop;
+      -- pas trouvé
+      header := null_header;
+      bits := System.Null_address;
+   end Get_Bitmap;
+
+
+   function Id_of( value : Integer ) return obj_id_type is
+   begin
+      return obj_id_type'val( value );
+   end Id_of;
+
+end Resources_pkg;

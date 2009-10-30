@@ -1,0 +1,137 @@
+with "d:\Developpement\gpl\lib\gnat\win32ada.gpr";
+
+project Canta is
+
+   for Main use ("canta.adb");
+
+   type Build_Type is ("Full_prod", "Full_debug");
+   Build : Build_Type := external ("build", "Full_debug");
+
+   type Langue_Type is ("en", "fr");
+   Langue : Langue_Type := external ("langue", "fr");
+
+   case Langue is
+
+      when "fr" =>
+
+         case Build is
+
+            when "Full_debug" =>
+               for Object_Dir use "..\obj_dbg";
+               for Source_Files use ("affichage_pkg.adb", "affichage_pkg.ads", "bitmap_pkg.adb", "bitmap_pkg.ads", "byte_io.adb", "byte_io.ads", "canta.adb", "common_types.ads", "conversions.adb", "conversions.ads", "data_pkg.adb",
+"data_pkg.ads", "dialog_pkg.adb", "dialog_pkg.ads", "general_midi.ads", "layout_pkg.adb", "layout_pkg.ads", "log.adb", "log.ads", "midifile_pkg.adb", "midifile_pkg.ads", "midi_pkg.adb", "midi_pkg.ads",
+"process_pkg.adb", "process_pkg.ads", "registre_pkg.adb", "registre_pkg.ads", "resources_pkg.adb", "resources_pkg.ads", "stat_pkg.adb", "stat_pkg.ads", "template_pkg.adb", "template_pkg.ads", "timer_pkg.adb", "timer_pkg.ads",
+"user_interface.adb", "user_interface.ads", "utils_pkg.adb", "utils_pkg.ads", "wavefile_pkg.adb", "wavefile_pkg.ads", "win_audio.adb", "win_audio.ads", "debug_pkg.ads", "debug_pkg.adb", "skins_pkg.adb",
+"skins_pkg.ads", "objects_pkg.ads", "objects_pkg.adb", "config_pkg.ads", "intl.ads");
+
+            when "Full_prod" =>
+               for Object_Dir use "..\obj_prod";
+               for Source_Files use ("affichage_pkg.adb", "affichage_pkg.ads", "bitmap_pkg.adb", "bitmap_pkg.ads", "byte_io.adb", "byte_io.ads", "canta.adb", "common_types.ads", "conversions.adb", "conversions.ads", "data_pkg.adb",
+"data_pkg.ads", "dialog_pkg.adb", "dialog_pkg.ads", "general_midi.ads", "layout_pkg.adb", "layout_pkg.ads", "log.adb", "log.ads", "midifile_pkg.adb", "midifile_pkg.ads", "midi_pkg.adb", "midi_pkg.ads",
+"process_pkg.adb", "process_pkg.ads", "registre_pkg.adb", "registre_pkg.ads", "resources_pkg.adb", "resources_pkg.ads", "stat_pkg.adb", "stat_pkg.ads", "template_pkg.adb", "template_pkg.ads", "timer_pkg.adb", "timer_pkg.ads",
+"user_interface.adb", "user_interface.ads", "utils_pkg.adb", "utils_pkg.ads", "wavefile_pkg.adb", "wavefile_pkg.ads", "win_audio.adb", "win_audio.ads", "debug_pkg.ads", "debug_pkg.adb", "skins_pkg.adb",
+"skins_pkg.ads", "objects_pkg.ads", "objects_pkg.adb", "config_pkg.ads", "intl.ads");
+
+		end case;
+		
+      when "en" =>
+
+         case Build is
+
+            when "Full_debug" =>
+               for Object_Dir use "..\obj_dbg";
+               for Source_Files use ("affichage_pkg.adb", "affichage_pkg.ads", "bitmap_pkg.adb", "bitmap_pkg.ads", "byte_io.adb", "byte_io.ads", "canta.adb", "common_types.ads", "conversions.adb", "conversions.ads", "data_pkg.adb",
+"data_pkg.ads", "dialog_pkg.adb", "dialog_pkg.ads", "general_midi.ads", "layout_pkg.adb", "layout_pkg.ads", "log.adb", "log.ads", "midifile_pkg.adb", "midifile_pkg.ads", "midi_pkg.adb", "midi_pkg.ads",
+"process_pkg.adb", "process_pkg.ads", "registre_pkg.adb", "registre_pkg.ads", "resources_pkg.adb", "resources_pkg.ads", "stat_pkg.adb", "stat_pkg.ads", "template_pkg.adb", "template_pkg.ads", "timer_pkg.adb", "timer_pkg.ads",
+"user_interface.adb", "user_interface.ads", "utils_pkg.adb", "utils_pkg.ads", "wavefile_pkg.adb", "wavefile_pkg.ads", "win_audio.adb", "win_audio.ads", "debug_pkg.ads", "debug_pkg.adb", "skins_pkg.adb",
+"skins_pkg.ads", "objects_pkg.ads", "objects_pkg.adb", "config_pkg.ads", "intl-en.ads");
+
+            when "Full_prod" =>
+               for Object_Dir use "..\obj_prod";
+               for Source_Files use ("affichage_pkg.adb", "affichage_pkg.ads", "bitmap_pkg.adb", "bitmap_pkg.ads", "byte_io.adb", "byte_io.ads", "canta.adb", "common_types.ads", "conversions.adb", "conversions.ads", "data_pkg.adb",
+"data_pkg.ads", "dialog_pkg.adb", "dialog_pkg.ads", "general_midi.ads", "layout_pkg.adb", "layout_pkg.ads", "log.adb", "log.ads", "midifile_pkg.adb", "midifile_pkg.ads", "midi_pkg.adb", "midi_pkg.ads",
+"process_pkg.adb", "process_pkg.ads", "registre_pkg.adb", "registre_pkg.ads", "resources_pkg.adb", "resources_pkg.ads", "stat_pkg.adb", "stat_pkg.ads", "template_pkg.adb", "template_pkg.ads", "timer_pkg.adb", "timer_pkg.ads",
+"user_interface.adb", "user_interface.ads", "utils_pkg.adb", "utils_pkg.ads", "wavefile_pkg.adb", "wavefile_pkg.ads", "win_audio.adb", "win_audio.ads", "debug_pkg.ads", "debug_pkg.adb", "skins_pkg.adb",
+"skins_pkg.ads", "objects_pkg.ads", "objects_pkg.adb", "config_pkg.ads", "intl-en.ads");
+
+         end case;
+   end case;
+
+   package Linker is
+
+      case Build is
+
+         when "Full_debug" =>
+            for Default_Switches ("ada") use ("-g", "-fprofile-generate", "-mwindows", "..\obj_dbg\win_resources.o");
+
+         when "Full_prod" =>
+            for Default_Switches ("ada") use ("-s", "-mwindows", "..\obj_dbg\win_resources.o");
+
+      end case;
+   end Linker;
+
+   package Compiler is
+
+      case Build is
+
+         when "Full_debug" =>
+            for Default_Switches ("ada") use ("-ftest-coverage", "-fprofile-arcs", "-gnatf", "-g");
+
+         when "Full_prod" =>
+            for Default_Switches ("ada") use ("-O2", "-gnatn", "-funroll-loops");
+
+      end case;
+   end Compiler;
+
+   package Pretty_Printer is
+      for Default_Switches ("ada") use ("-M120");
+   end Pretty_Printer;
+
+   package Builder is
+
+      case Langue is
+
+         when "fr" =>
+
+            case Build is
+
+               when "Full_debug" =>
+                  for Default_Switches ("ada") use ("-s", "-g");
+                  for Executable ("canta.adb") use "..\exe\canta-dbg-fr.exe";
+
+               when "Full_prod" =>
+                  for Default_Switches ("ada") use ("-s");
+                  for Executable ("canta.adb") use "..\exe\canta-fr.exe";
+
+            end case;
+
+         when "en" =>
+
+            case Build is
+
+               when "Full_debug" =>
+                  for Default_Switches ("ada") use ("-s", "-g");
+                  for Executable ("canta.adb") use "..\exe\canta-dbg-en.exe";
+
+               when "Full_prod" =>
+                  for Default_Switches ("ada") use ("-s");
+                  for Executable ("canta.adb") use "..\exe\canta-en.exe";
+
+            end case;
+      end case;
+   end Builder;
+
+   package Naming is
+
+      case Langue is
+
+         when "fr" =>
+            for Specification ("intl") use "Intl.ads";
+
+         when "en" =>
+            for Specification ("intl") use "Intl-en.ads";
+      end case;
+   end Naming;
+
+end Canta;
+

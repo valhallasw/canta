@@ -1,0 +1,15 @@
+    CANTA est un outil pour apprendre à chanter juste.
+	
+    Copyright (C) 2008 Christophe Chaumet
+
+    Ce programme est un logiciel libre: vous pouvez le redistribuer et/ou
+	le modifier dans le respect des termes de la GNU General Public License
+	comme publiée par la Free Software Foundation, version 3 ou supérieure.
+
+    Ce logiciel est distribué dans l'espoir qu'il sera utile, mais SANS
+	AUCUNE GARANTIE; sans même la garantie implicite de COMMERCIALISATION
+	ou D'ADAPTATION A UN OBJET PARTICULIER. Voir la GNU General Public License
+	pour plus de détails.
+
+	Vous devriez avoir reçu un exemplaire de la GNU General Public License
+    avec ce programme. Sinon, consultez <http://www.gnu.org/licenses/>.

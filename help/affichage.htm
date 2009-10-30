@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META name="copyright" content="2008 Chaumet Software">
+<TITLE>Aide de Canta - Affichage des notes</TITLE>
+</HEAD>
+<BODY>
+
+<h1>Affichage des notes</h1>
+<p>La zone centrale de Canta est dédiée à l'affichage des notes, celles que vous chantez et celle de la mélodie jouée par le player MIDI.</p>
+<IMG SRC="score_position.png">
+
+<h2>Notes chantées</h2>
+<p>La note que vous chantez est affichée en temps réel dans la partie centrale de la fenêtre de Canta, sous la forme d'un trait rouge.</p>
+<p>Pour que Canta puisse mesurer la fréquence de ce qui est chanté, il faut que le niveau sonore soit suffisant, ce qui est matérialisé par l'indicateur de réglage du microphone qui devient vert, et que le son produit soit suffisamment harmonique, ce qui est le cas pour les voyelles, mais pas pour les consonnes. De ce fait, même si vous avez l'impression de chanter en continu, le trait peut être discontinu.</p>
+<p>Chaque ligne horizontale correspond à un demi-ton. Les traits plus foncés sont les Do.</p>
+<IMG SRC="notes_chant.png">
+<p>On peut voir dans l'exemple ci-dessus, que les notes chantées peuvent présenter de grande variation de hauteur en début comme en fin de note. Ce qui donne la sensation de hauteur est la partie quasi horizontale, qui peut être agrémentée d'un vibrato. Ici, la première note semble osciller entre un mi et un fa, les deux suivantes sont clairement des ré, et elles sont suivies par un mi, un sol et un fa.</p>
+
+<h2>Mélodie du player</h2>
+<p>Quand un fichier MIDI est joué, les notes sont d'abord affichées quelque temps en avance (environ 2 secondes) sous la forme de rectangle gris, puis quand le moment de les jouer arrive, elles deviennent vertes.</p>
+<IMG SRC="notes_midi.png">
+
+<h2>Zoom et position</h2>
+<p>Il est possible de zoomer verticalement dans la zone d'affichage grâce aux deux boutons + et - situé sur le bord droite et en haut, et de la zone, et horizontalement avec les deux boutons + et - situés en bas et à gauche de la zone.</p>
+<p>Exemple:</p>
+<IMG SRC="aff_zoom_ref.png">
+<p>Effet du zoom vertical:</p>
+<IMG SRC="aff_zoom_vert.png">
+<p>... et avec le zoom horizontal:</p>
+<IMG SRC="aff_zoom_horiz.png">
+<p>Lorsqu'un fichier MIDI est chargé, Canta  calcule la valeur optimale du zoom de façon à ce que toutes les notes soient visibles dans la fenêtre d'affichage et soient le plus grandes possibles.
+Si vous utilisez le zoom et que vous souhaitez revenir au réglage optimal qui centre toutes les notes de la mélodie sur l'écran, il suffit de cliquer sur le bouton <img src="centrage.png"> situé à droite de la barre des mesures.</p>
+
+<h2>Barre des mesures</h2>
+<IMG SRC="barre_mesures.png">
+<p>La barre qui est juste sous les notes et qui défile en même temps qu'elles, représente les mesures musicales du morceau joué par le player. Chaque mesure est représentée par un rectangle vert avec un numéro. Lorsque vous cliquez dans une mesure, le player est reprogrammé pour jouer le morceau à partir du début de la mesure correspondante. Ceci permet de reprendre un passage que l'on veut refaire sans avoir besoin de recommencer le morceau au début.</p>
+<p>Dés que vous cliquez dans une mesure, le player est lancé. S'il était en pause, il sort de la pause; s'il était arrêté, il redémarre, et s'il était en train de jouer, les notes en cours sont arrêtées et le morceau repart immédiatement au début de la mesure sélectionnée.</p>
+<p>Cliquer dans la barre des mesures, mais en dehors du rectangle d'une mesure, n'a aucun effet.</p>
+
+<h2>Mode normal</h2>
+<img src="score_norm.png">
+<p>En fonctionnement normal, la zone d'affichage des notes est séparée en deux parties par un trait vertical. Il correspond au moment présent. La zone d'affichage défile en permanence vers la gauche, qui correspond aux notes chantées ou jouées. Dans la partie droite, l'avenir, sont affichées en gris les notes du player qui vont bientôt être jouées. Cela vous permet de vous préparer et éventuellement de vous recaler dans la mélodie.</p>
+<p>La vitesse de défilement peut être modifiée avec les deux boutons + et - situés en bas à gauche de la zone d'affichage (zoom horizontal).</p>
+
+<h2>Mode gel</h2>
+<p>Pour entrer dans le mode gel cliquez sur le bouton "Geler" situé en bas à gauche de la fenêtre. Pour en sortir, cliquez à nouveau sur le bouton "Geler".</p>
+<img src="score_gel.png">
+<p>Dans le mode gel, c'est à dire quand vous avez cliqué une fois sur le bouton "Geler", le player MIDI est arrêté s'il était en marche, il n'y a plus de trait vertical, les notes à venir ne sont plus affichées, et ne sont alors affichées que les notes qui ont été jouées. La capture et l'analyse de la voix sont arrêtées.</p>
+<p>Le mode gel permet de remonter dans le passé pour étudier votre performance. Dans ce mode, l'ascenseur horizontal devient actif, il vous permet de décaler l'affichage dans le temps. Les boutons de zooms sont toujours actifs et vous permettent de mieux voir les détails.</p>
+<p>Dès que Canta revient au mode normal, l'ascenseur horizontal redevient inactif, et l'affichage se recale sur le présent, symbolisé par le trait vertical. L'ascenseur vertical et les boutons de zoom sont toujours actifs quelque soit le mode.</p>
+<p>Si vous cliquez dans une barre de mesure dans le mode gel, Canta sort immédiatement du mode gel et lance la lecture du morceau au début de la mesure sélectionnée. Si vous cliquez dans la barre de mesure mais en dehors d'une mesure, c'est à dire dans une zone blanche, cela n'a aucun effet.</p>
+<hr>
+<p><A HREF="index.htm">Retour à l'index</A> - <A HREF="interface.htm">Retour à l'Interface</A></p>
+
+</BODY>
+</HTML>
