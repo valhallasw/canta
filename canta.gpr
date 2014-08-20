@@ -1,4 +1,4 @@
-with "d:\Developpement\gpl\lib\gnat\win32ada.gpr";
+with "win32ada.gpr";
 
 project Canta is
 
