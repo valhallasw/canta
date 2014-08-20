@@ -5,7 +5,7 @@ package Config_pkg is
    is_full : constant boolean := true;
    int_full : constant := 1;
 
-   version : constant string := "v1.10";
+   version : constant string := "v1.11";
 
 
 end Config_pkg;

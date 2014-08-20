@@ -128,6 +128,10 @@ package body Win_audio is
          level   : MIXERCONTROLDETAILS_UNSIGNED; -- détail pour les fader
          on_off  : MIXERCONTROLDETAILS_BOOLEAN; -- détail pour les switch
       begin
+         -- traitement cas special
+         if Nb_control = 0 then
+            return;
+         end if;
          -- init des mixer control (est-ce nécessaire?)
          for cont in 1..Nb_control loop
             mixer_control(cont).cbStruct := (Win32.Mmsystem.MIXERCONTROL'size) / 8;

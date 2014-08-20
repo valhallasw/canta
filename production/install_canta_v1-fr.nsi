@@ -1,13 +1,13 @@
 ; FRANCAIS + COMPLET
 
 ; Suppression de l'exe dans le répertoire 'Install'
-!system 'del D:\Work\Dev\Canta\Install\canta-fr.exe'
+!system 'del C:\Work\Dev\Canta\Install\canta-fr.exe'
 ; Compression de l'exe de Exe dans Install
-!system 'D:\Developpement\NeoLite\NeoLiteCli D:\Work\Dev\Canta\Exe\canta-fr.exe D:\Work\Dev\Canta\Install\canta-fr.exe -e -q'
+!system 'C:\Developpement\NeoLite\NeoLiteCli C:\Work\Dev\Canta\Exe\canta-fr.exe C:\Work\Dev\Canta\Install\canta-fr.exe -e -q'
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Canta"
-!define PRODUCT_VERSION "1.10"
+!define PRODUCT_VERSION "1.11"
 !define PRODUCT_PUBLISHER "Chaumet Software"
 !define PRODUCT_WEB_SITE "http://www.chaumetsoftware.com"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\canta.exe"
@@ -62,7 +62,7 @@ ShowUnInstDetails show
 Section "SectionPrincipale" SEC01
   SetOutPath "$INSTDIR"
   SetOverwrite try
-  File /oname=canta.exe "D:\Work\Dev\Canta\Install\canta-fr.exe"
+  File /oname=canta.exe "C:\Work\Dev\Canta\Install\canta-fr.exe"
   CreateDirectory "$SMPROGRAMS\Canta"
   CreateShortCut "$SMPROGRAMS\Canta\Canta.lnk" "$INSTDIR\canta.exe"
   CreateShortCut "$DESKTOP\Canta.lnk" "$INSTDIR\canta.exe"

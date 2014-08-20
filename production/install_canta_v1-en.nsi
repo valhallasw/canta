@@ -1,14 +1,14 @@
 ; ENGLISH + FULL
 
 ; Suppression de l'exe dans Install
-!system 'del D:\Work\Dev\Canta\Install\canta-en.exe'
+!system 'del C:\Work\Dev\Canta\Install\canta-en.exe'
 ; Compression de l'exe de Exe dans Install
-!system 'D:\Developpement\NeoLite\NeoLiteCli D:\Work\Dev\Canta\Exe\canta-en.exe D:\Work\Dev\Canta\Install\canta-en.exe -e -q'
+!system 'C:\Developpement\NeoLite\NeoLiteCli C:\Work\Dev\Canta\Exe\canta-en.exe C:\Work\Dev\Canta\Install\canta-en.exe -e -q'
 
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Canta"
-!define PRODUCT_VERSION "1.10"
+!define PRODUCT_VERSION "1.11"
 !define PRODUCT_PUBLISHER "Chaumet Software"
 !define PRODUCT_WEB_SITE "http://www.singintune.org/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\canta-en.exe"
