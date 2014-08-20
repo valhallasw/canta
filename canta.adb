@@ -26,7 +26,7 @@ with Resources_pkg;
 
 procedure Canta is
    Result      : Win32.BOOL;
-   Long_Result : Win32.LONG;
+   Long_Result : Win32.LRESULT;
    msg         : Win32.Winuser.LPMSG := new Win32.Winuser.MSG;
    process     : Win32.Winnt.HANDLE;
    res_bool    : Win32.BOOL;

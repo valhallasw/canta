@@ -1325,12 +1325,12 @@ package body Objects_pkg is
    procedure Notify_Parent( obj   : UI_object_ptr;
                             code  : Win32.WPARAM;
                             param : Win32.LPARAM := 0 ) is
-      resu_long : Win32.LONG;
+      resu_long : Win32.LRESULT;
    begin
       resu_long := Win32.Winuser.SendMessage(
                            Common_types.Win_hwnd,		-- la main window
-                           code,				-- code notification
-                           Win32.UINT(obj_Id_type'pos(obj.Id)),	-- Id de l'objet
+                           Win32.UINT(code),				-- code notification
+                           Win32.WPARAM(obj_Id_type'pos(obj.Id)),	-- Id de l'objet
                            param );					-- inutilisé
    end Notify_Parent;
 
@@ -1369,7 +1369,7 @@ package body Objects_pkg is
 
                when fader =>
                   -- position de la souris
-                  Conversions.Split_short( LParam, hi => mouse_y, low => mouse_x );
+                  Conversions.Split_short( win32.LONG(LParam), hi => mouse_y, low => mouse_x );
                   -- si souris est sur curseur, la capturer et la suivre
                   if integer(mouse_x) in obj.curs_X..obj.curs_X+obj.curs_large and then
                      integer(mouse_y) in obj.curs_Y..obj.curs_Y+obj.curs_haut
@@ -1442,7 +1442,7 @@ package body Objects_pkg is
                   res_bool := Win32.Winuser.ReleaseCapture;
                   obj.capture_on := false;
                   -- position de la souris
-                  Conversions.Split_short( LParam, hi => mouse_y, low => mouse_x );
+                  Conversions.Split_short( win32.LONG(LParam), hi => mouse_y, low => mouse_x );
                   -- suivre la souris et recalcule la valeur associée
                   Num_Compute_value( obj, integer(mouse_y) );
                   -- affichage du fader
@@ -1458,7 +1458,7 @@ package body Objects_pkg is
                when fader =>
                   if obj.fader_state = fader_on then
                      -- position de la souris
-                     Conversions.Split_short( LParam, hi => mouse_y, low => mouse_x );
+                     Conversions.Split_short( win32.LONG(LParam), hi => mouse_y, low => mouse_x );
                       -- positionne le curseur pour suivre la souris et recalcule la valeur associée
                       Move_cursor( obj, integer(mouse_x), integer(mouse_y) );
                       -- affichage du fader
@@ -1472,7 +1472,7 @@ package body Objects_pkg is
                when display =>
                   if obj.Id = SCORE_ID then
                      -- on teste la position de la souris
-                     Conversions.Split_short( LParam, hi => mouse_y, low => mouse_x );
+                     Conversions.Split_short( win32.LONG(LParam), hi => mouse_y, low => mouse_x );
                      if mouse_x < 0 or else mouse_x > Win32.SHORT(obj.largeur)
                         or else mouse_y < 0 or else mouse_Y > Win32.SHORT(obj.hauteur) then
                         -- on relache la souris
@@ -1496,7 +1496,7 @@ package body Objects_pkg is
                         Display_Button( obj );
                      when but_On | but_Clic =>
                         -- on teste la position de la souris
-                        Conversions.Split_short( LParam, hi => mouse_y, low => mouse_x );
+                        Conversions.Split_short( win32.LONG(LParam), hi => mouse_y, low => mouse_x );
                         if mouse_x < 0 or else mouse_x > Win32.SHORT(obj.largeur)
                            or else mouse_y < 0 or else mouse_Y > Win32.SHORT(obj.hauteur) then
                            -- on relache la souris
@@ -1516,7 +1516,7 @@ package body Objects_pkg is
                      -- se souvenir qu'il y a eu déplacement
                      obj.moved := true;
                      -- position de la souris
-                     Conversions.Split_short( LParam, hi => mouse_y, low => mouse_x );
+                     Conversions.Split_short( win32.LONG(LParam), hi => mouse_y, low => mouse_x );
                      -- suivre la souris et recalcule la valeur associée
                      Num_Compute_value( obj, integer(mouse_y) );
                      -- affichage du fader

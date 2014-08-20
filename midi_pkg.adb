@@ -1237,7 +1237,7 @@ package body Midi_pkg is
    procedure Seek_player( time : integer ) is
       old_status : player_status_type;
       trk : midifile_pkg.track_data_ptr;
-      resu_long: Win32.LONG;
+      resu_long: Win32.LRESULT;
    begin
       old_status := status;
       -- pause pour éviter de jouer d'autres notes quand le seek est appelé pendant que la player joue
@@ -1317,7 +1317,7 @@ package body Midi_pkg is
    procedure Do_Next_tick is
       trk : midifile_pkg.track_data_ptr;
       count : natural := 0;
-      resu_long : Win32.LONG;
+      resu_long : Win32.LRESULT;
       now : integer;
    begin
       if status /= playing then
@@ -1342,7 +1342,7 @@ package body Midi_pkg is
                -- notification de l'UI pour mise à jour de l'affichage
                resu_long := Win32.Winuser.SendMessage( Common_types.Win_hwnd,
                            Common_types.BUTTON_CLICKED,		-- code notification
-                           Win32.UINT(Resources_pkg.obj_Id_type'pos(Resources_pkg.STOP_ID)), 	-- Id du bouton
+                           Win32.WPARAM(Resources_pkg.obj_Id_type'pos(Resources_pkg.STOP_ID)), 	-- Id du bouton
                            0 );				-- non utilisé
             end if;
             -- on arrête là pour ce cycle
@@ -1410,7 +1410,7 @@ package body Midi_pkg is
          else
             resu_long := Win32.Winuser.SendMessage( Common_types.Win_hwnd,
                               Common_types.BUTTON_CLICKED,		-- code notification
-                              Win32.UINT(Resources_pkg.obj_Id_type'pos(Resources_pkg.STOP_ID)), 	-- Id du bouton
+                              Win32.WPARAM(Resources_pkg.obj_Id_type'pos(Resources_pkg.STOP_ID)), 	-- Id du bouton
                               0 );				-- non utilisé
          end if;
       end if;

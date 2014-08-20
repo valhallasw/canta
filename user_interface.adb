@@ -623,7 +623,7 @@ package body User_Interface is
 
                when MESURES_ID =>
                    -- lecture position de la souris
-                   Conversions.Split_short( LParam, hi => mouse_y, low => mouse_x );
+                   Conversions.Split_short( Win32.LONG(LParam), hi => mouse_y, low => mouse_x );
                    -- recherche de la mesure correspondant à la position
                    new_mesure := Affichage_pkg.Get_mesure( integer(mouse_x) );
                    -- si on est dans une mesure jouée:
@@ -653,7 +653,7 @@ package body User_Interface is
          when Win32.Winuser.WM_LBUTTONDOWN =>
             if Resources_pkg.Id_of( Integer(wParam) ) = Resources_pkg.SCORE_ID then
                -- lecture position de la souris
-               Conversions.Split_short( LParam, hi => mouse_y, low => mouse_x );
+               Conversions.Split_short( Win32.LONG(LParam), hi => mouse_y, low => mouse_x );
                -- recherche de la note correspondant à la position
                note := Affichage_pkg.Get_note( integer(mouse_y) );
                -- joue la note jusqu'à buttonup
@@ -661,7 +661,7 @@ package body User_Interface is
 
             elsif Resources_pkg.Id_of( Integer(wParam) ) = Resources_pkg.MESURES_ID then
                 -- lecture position de la souris
-                Conversions.Split_short( LParam, hi => mouse_y, low => mouse_x );
+                Conversions.Split_short( win32.LONG(LParam), hi => mouse_y, low => mouse_x );
                 -- recherche de la mesure correspondant à la position
                 new_mesure := Affichage_pkg.Get_mesure( integer(mouse_x) );
                 if new_mesure /= null then

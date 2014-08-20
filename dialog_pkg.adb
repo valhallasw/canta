@@ -297,7 +297,7 @@ package body Dialog_pkg is
       resu_long       : Win32.LRESULT;
       freq_num        : Integer;
       cur_sel         : Integer;
-      cur_sel_long    : Win32.LONG;
+      cur_sel_long    : Win32.LRESULT;
       capacite        : WAVEINCAPS;	-- Win32.Mmsystem:1502
       fin             : integer;
       tmp             : integer;
@@ -336,7 +336,7 @@ package body Dialog_pkg is
                dev_ptr := dev_ptr.next;
             end loop;
             -- sélection valeur initiale: le courant
-            resu_long := SendMessage( hwnd_combo_micro, CB_SETCURSEL, cur_dev, 0 );
+            resu_long := SendMessage( hwnd_combo_micro, CB_SETCURSEL, win32.WPARAM(cur_dev), 0 );
             --
             -- Initialisation du combo frequence
             --
@@ -373,7 +373,7 @@ package body Dialog_pkg is
                 end if;
             end if;
             -- sélection valeur initiale: la valeur courante de Fs
-            resu_long := SendMessage( hwnd_combo_freq, CB_SETCURSEL, Win32.UINT(freq_num), 0 );
+            resu_long := SendMessage( hwnd_combo_freq, CB_SETCURSEL, Win32.WPARAM(freq_num), 0 );
             --
             -- Initialisation ComboBox Midi device
             --
@@ -398,7 +398,7 @@ package body Dialog_pkg is
                dev_ptr := dev_ptr.next;
             end loop;
             -- sélection valeur initiale: le courant
-            resu_long := SendMessage( hwnd_combo_midi, CB_SETCURSEL, cur_dev, 0 );
+            resu_long := SendMessage( hwnd_combo_midi, CB_SETCURSEL, win32.WPARAM(cur_dev), 0 );
             --
             -- doit toujours retourner 1 si INITDIALOG
             return 1;
@@ -467,11 +467,11 @@ package body Dialog_pkg is
                   -- Fréquence
                   --
                   cur_sel_long := SendMessage( hwnd_combo_freq, CB_GETCURSEL, 0, 0 );
-                  resu_long := SendMessage( hwnd_combo_freq, CB_GETLBTEXTLEN, Win32.UINT(cur_sel_long), 0 );
+                  resu_long := SendMessage( hwnd_combo_freq, CB_GETLBTEXTLEN, Win32.WPARAM(cur_sel_long), 0 );
                   declare
                      buffer : string(1..Integer(resu_long)+1);
                   begin
-                     resu_long := SendMessage( hwnd_combo_freq, CB_GETLBTEXT,  Win32.UINT(cur_sel_long),
+                     resu_long := SendMessage( hwnd_combo_freq, CB_GETLBTEXT,  Win32.WPARAM(cur_sel_long),
                                             TO_LPARAM(buffer'address));
                      if buffer = Str_44K then
                         -- fréquence sélectionnée
@@ -544,7 +544,7 @@ package body Dialog_pkg is
                          end if;
                      end if;
                      -- sélection valeur initiale
-                     resu_long := SendMessage( hwnd_combo_freq, CB_SETCURSEL, Win32.UINT(freq_num), 0 );
+                     resu_long := SendMessage( hwnd_combo_freq, CB_SETCURSEL, Win32.WPARAM(freq_num), 0 );
 
                   end if;
                   return 0;
@@ -1245,7 +1245,7 @@ package body Dialog_pkg is
                          wParam : Win32.WPARAM;
                          lParam : Win32.LPARAM) return Win32.BOOL is
       hwnd_autovolume, hwnd_changeinst, hwnd_family, hwnd_instrument, hwnd_skins : Win32.Windef.HWND;
-      resu_long : Win32.LONG;
+      resu_long : Win32.LPARAM;
       res_bool : Win32.BOOL;
       wm_Id     : Win32.WORD;
       num_skin, family, instrum : natural;
