@@ -584,8 +584,8 @@ package body Affichage_pkg is
       end if;
 
       showstr := showstr & " input=";
-      if last_mes_pt /= null then
-         showstr := showstr & Short_Integer'Image(last_mes_pt.note);
+      if last_note_pt /= null then
+         showstr := showstr & Short_Integer'Image(last_note_pt.note);
       else
          showstr := showstr & "null";
       end if;
