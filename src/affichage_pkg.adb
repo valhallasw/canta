@@ -1,3 +1,5 @@
+with Ada.Strings.Unbounded;
+use Ada.Strings.unbounded;
 with Calendar;
 
 with Interfaces.C;	use Interfaces.C;
@@ -284,10 +286,13 @@ package body Affichage_pkg is
       prem_note_pt, last_note_pt : Data_pkg.note_event_ptr;
       offset   : integer;
       restart : boolean;
+      showstr : Unbounded_String;
       --
       display : Objects_pkg.UI_object_ptr := Objects_pkg.Object_of( SCORE_ID );
       mesure  : Objects_pkg.UI_object_ptr := Objects_pkg.Object_of( MESURES_ID );
 
+
+      package SU   renames Ada.Strings.Unbounded;
       -- Mapping Note (en cents) -> ordonnées (en pixels)
       function To_Y( N : integer ) return Integer is
       begin
@@ -568,6 +573,24 @@ package body Affichage_pkg is
       Objects_pkg.Display_display( display );
       Objects_pkg.Display_display( mesure );
       --
+
+      Append(showstr, To_Unbounded_String("t="));
+      Append(showstr, To_Unbounded_String(Integer'Image(now)));
+      Append(showstr, To_Unbounded_String(" midi="));
+      if last_midi_pt /= null then
+         showstr := showstr & Short_Integer'Image(last_midi_pt.note);
+      else
+         showstr := showstr & "null" ;
+      end if;
+
+      showstr := showstr & " input=";
+      if last_mes_pt /= null then
+         showstr := showstr & Short_Integer'Image(last_mes_pt.note);
+      else
+         showstr := showstr & "null";
+      end if;
+
+      Objects_pkg.Set_Text(NOM_FIC_ID, To_String(showstr));
    end Update_score;
 
    procedure Update_Score is
