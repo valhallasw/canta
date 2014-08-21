@@ -1,1 +1,4 @@
-gnatinspect.db
+exe/*
+obj_dbg/*
+obj_prod/*
+src/gnatinspect.db
