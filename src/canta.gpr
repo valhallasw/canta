@@ -62,10 +62,10 @@ project Canta is
       case Build is
 
          when "Full_debug" =>
-            for Default_Switches ("ada") use ("-g", "-fprofile-generate", "-mwindows", "..\obj_dbg\win_resources.o");
+            for Default_Switches ("ada") use ("-g", "-fprofile-generate", "-mwindows", "-lwinmm", "..\obj_dbg\win_resources.o");
 
          when "Full_prod" =>
-            for Default_Switches ("ada") use ("-s", "-mwindows", "..\obj_dbg\win_resources.o");
+            for Default_Switches ("ada") use ("-s", "-mwindows", "-lwinmm", "..\obj_dbg\win_resources.o");
 
       end case;
    end Linker;
